@@ -12,11 +12,11 @@ var Maze = function(doc, elemId) {
   this.knownParams                  = {};
   this.cardNames                    = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K"];
   this.cardSuits                    = ["H", "S", "C", "D"];
-  this.cardValues                   = allPossibleCases([this.cardNames, this.cardSuits]);
+  this.cardValues                   = _.shuffle(allPossibleCases([this.cardNames, this.cardSuits]));
   this.remainingCardValues          = [];
   this.encryptedNames               = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"];
   this.encryptedSuits               = ["1", "2", "3", "4"];
-  this.encryptedValues              = allPossibleCases([this.encryptedNames, this.encryptedSuits]);
+  this.encryptedValues              = _.shuffle(allPossibleCases([this.encryptedNames, this.encryptedSuits]));
   this.remainingEncryptedCardValues = [];
 
   function allPossibleCases(arr) {
